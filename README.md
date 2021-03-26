@@ -1,8 +1,3 @@
-# Interactive Monuments for Chainlink Spring Hackathon 2021
-This interactive monument smart contract was created for the [Chainlink Spring Hackathon 2021](https://chain.link/hackathon) ([DevPost](https://chainlink-2021.devpost.com))
-
-Competes in the GovTech category: https://blog.chain.link/introducing-the-govtech-prize-at-the-chainlink-virtual-hackathon/
-
 ## Interactive Public Monuments
 Make the city interactive and raise money for public infrastructure at the same time!
 
@@ -30,6 +25,11 @@ Deployed to the Kovan test network: `0x4987Fce831147CbE6D6b6d5a4bBDeCDc2E163971`
 - As a user, fund the contract with `ETH` using the `deposit` function. It costs 0.01 Eth to trigger an event
 - As a user, call the `setColor` function to change the color of the monument
 - See the log of webhook calls at: https://webhook.site/#!/ac12f6e8-f06c-445b-8941-b62b6527427e/0f8bee2a-b6c2-4bec-9fde-d0305658df69/1
+
+# Chainlink Spring Hackathon 2021
+This project was created for the [Chainlink Spring Hackathon 2021](https://chain.link/hackathon) ([DevPost](https://chainlink-2021.devpost.com))
+
+Competes in the GovTech category: https://blog.chain.link/introducing-the-govtech-prize-at-the-chainlink-virtual-hackathon/
 
 ## TODO
 - [ ] Webpage to interact with the smart contract
