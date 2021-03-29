@@ -4,7 +4,8 @@ Make the city interactive and raise money for public infrastructure at the same 
 This smart contract can trigger events in the real world. For example:
 - Set the color of the lights at a city fountain
 - Display a text at an interactive display
-- Turn on or change the color ofthe lights at a city monument
+- Turn on the lights in the Christmas tree
+- Turn on or change the color of the lights of a city monument
 
 Users have to pay to trigger these events. Users can send the needed funds to the smart contract. Only after the funds are received, they can trigger the interactive event.
 
