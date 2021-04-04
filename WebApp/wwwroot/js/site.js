@@ -1,7 +1,5 @@
 ﻿"use strict";
 
-const ethUtil = require('ethereumjs-util');
-
 function send() {
     // Acccounts now exposed
     web3.eth.sendTransaction({/* ... */ });
@@ -98,6 +96,31 @@ function encrypt() {
             console.log('The decrypted message is:', decryptedMessage)
         )
         .catch((error) => console.log(error.message));
+}
+
+async function color(color) {
+
+    let ABI = [
+        "function setColor(string color)"
+    ];
+
+    let iface = new ethers.utils.Interface(ABI);
+
+    var data = iface.encodeFunctionData("setColor", [color]);
+    console.log(data);
+   // var test = contract.populateTransaction.transfer(ethereum.selectedAddress, tokenValue, { value: 1.0 })
+
+    const transactionParameters = {
+        to: '0x60d0590220D92bb0ded636f5272a5F29E2e39380',
+        from: ethereum.selectedAddress, // must match user's active address.
+        value: '0x38D7EA4C68000',
+        data: data
+    };
+
+    const txHash = await ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [transactionParameters],
+    });
 }
 
 async function load() {

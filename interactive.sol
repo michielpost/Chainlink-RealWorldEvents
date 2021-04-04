@@ -23,7 +23,7 @@ contract Interactive is ChainlinkClient {
 
     constructor() public {
         owner = msg.sender;
-        actionFee = 0.01 ether;
+        actionFee = 0.001 ether;
 
         //Network: Kovan
         setPublicChainlinkToken();
@@ -61,14 +61,25 @@ contract Interactive is ChainlinkClient {
     /**
      * Calls WebAPI using Chainlink with the given color, if there are enough funds deposited by the calling address
      */
-    function setColor(string memory color) public returns (bytes32 requestId) {
-        //Check if you have deposited enough funds
-        require(_deposits[msg.sender] >= actionFee);
+    function setColor(string memory color) public payable returns (bytes32 requestId) {
+        if(msg.value != actionFee)
+        {
+            if(msg.value > 0)
+            {
+                _deposits[msg.sender] += msg.value;
+                emit Deposited(msg.sender, msg.value);
+        
+            }
 
-        //Subtract the fee needed for the action
-        _deposits[msg.sender] -= actionFee;
-        emit Withdrawn(msg.sender, actionFee);
+            //Check if you have deposited enough funds
+            require(_deposits[msg.sender] >= actionFee);
 
+            //Subtract the fee needed for the action
+            _deposits[msg.sender] -= actionFee;
+            emit Withdrawn(msg.sender, actionFee);
+
+        }
+        
         //Add funds to owner
         _deposits[owner] += actionFee;
 
