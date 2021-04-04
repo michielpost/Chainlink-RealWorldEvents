@@ -99,7 +99,7 @@ function encrypt() {
 }
 
 async function setColor() {
-    let col = document.getElementById('picker').value;
+    let col = encodeURIComponent(document.getElementById('picker').value);
     console.log(col)
 
     await color(col);
