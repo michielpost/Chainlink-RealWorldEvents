@@ -111,7 +111,7 @@ async function color(color) {
    // var test = contract.populateTransaction.transfer(ethereum.selectedAddress, tokenValue, { value: 1.0 })
 
     const transactionParameters = {
-        to: '0x60d0590220D92bb0ded636f5272a5F29E2e39380',
+        to: '0x722BcdA7BD1a0f8C1c9b7c0eefabE36c1f0fBF2a',
         from: ethereum.selectedAddress, // must match user's active address.
         value: '0x38D7EA4C68000',
         data: data

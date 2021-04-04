@@ -93,7 +93,7 @@ contract Interactive is ChainlinkClient {
             "get",
             string(
                 abi.encodePacked(
-                    "https://webhook.site/ac12f6e8-f06c-445b-8941-b62b6527427e?color=",
+                    "https://chainlink-interactive.azurewebsites.net/webhook?color=",
                     color
                 )
             )
@@ -119,7 +119,7 @@ contract Interactive is ChainlinkClient {
             "get",
             string(
                 abi.encodePacked(
-                    "https://webhook.site/ac12f6e8-f06c-445b-8941-b62b6527427e?color=",
+                    "https://chainlink-interactive.azurewebsites.net/webhook?color=",
                     color
                 )
             )
