@@ -98,7 +98,16 @@ function encrypt() {
         .catch((error) => console.log(error.message));
 }
 
+async function setColor() {
+    let col = document.getElementById('picker').value;
+    console.log(col)
+
+    await color(col);
+}
+
 async function color(color) {
+
+    await load();
 
     let ABI = [
         "function setColor(string color)"

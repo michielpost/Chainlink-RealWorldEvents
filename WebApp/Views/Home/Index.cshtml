@@ -2,18 +2,32 @@
     ViewData["Title"] = "Interactive Monuments";
 }
 
-<div class="text-center">
+<div class="text">
     <h1 class="display-4">Interactive Monuments</h1>
     <p>Interact with monuments in your city.</p>
 
-    Proof of concept. How to run this?
+    Proof of concept.
+    <h3>How to use this?</h3>
     <ol>
         <li>Install MetaMask and create an account on the Kovan testnet</li>
-        <li>Get some ETH on the Kovan testnet using this faucet: https://faucet.kovan.network/</li>
-        <li>Change the color</li>
+        <li>Get some ETH on the Kovan testnet using <a href="https://faucet.kovan.network/" target="_blank">this faucet</a>.</li>
+        <li>Pick a new color</li>
+        <li>Press the "set color" button</li>
+        <li>MetaMask will ask to confirm te transaction</li>
+        <li>After the transaction is confirmed, the color will change (no page refresh needed!)</li>
     </ol>
 
+    <hr />
 
+    Current color of the fountain: <span id="current" style="background: @Startup.Color">&nbsp;&nbsp;&nbsp;</span>
+    <br />
+    <br />
+    Pay 0.001 Eth to change the color of this fountain!<br />
+    Pick a color: <input type="color" value="#00ff00" id="picker" />
+    <button onclick="setColor()">Set color</button>
+
+    <br />
+    <br />
 
     <div class="imgcontainer">
         <div class="color-overlay" id="overlay" style="background: @Startup.Color"></div>
@@ -21,8 +35,8 @@
 
 </div>
 
-<button onclick="load()">Load</button>
+@*<button onclick="load()">Load</button>
 <button onclick="get()">get address</button>
 <button onclick="encrypt()">Encrypt / decrypt</button>
-<button onclick="color('green')">ChangeColor</button>
+<button onclick="color('green')">ChangeColor</button>*@
 
