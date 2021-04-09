@@ -14,14 +14,20 @@ The City is the owner of the smart contract. They can withdraw the used user fun
 Live Demo: https://chainlink-interactive.azurewebsites.net
 
 ## Tech Setup
+- Solidity smart contract
+- Demo page runs on ASP.Net Core 5
+- Using SignalR for realtime updates over websockets
+- MetaMask and ether.js to trigger the smart contract from the browser
+
 ### Smart Contract Functions
+`interactive.sol`:
 - `deposit`: Deposit Ethereum to this contract
 - `depositsOf(address payee)`: Check the deposited value of the given address
 - `withdraw(uint amount)`: Users can withdraw unused funds and the owner can withdraw funds that have been payed
 - `setColor(string color)`: Sets the color of the lights by calling a Web API using Chainlink. Depending on the configured URL, this can also trigger other real world functions.
 
 - 
-## Usage
+## Use the Smart Contract
 - Deploy `interactive.sol` to the network:
 Deployed to the Kovan test network: `0x722BcdA7BD1a0f8C1c9b7c0eefabE36c1f0fBF2a`
 - As the owner, transfer `LINK` to the contract. It costs 0.1 LINK to do a web request
@@ -29,6 +35,14 @@ Deployed to the Kovan test network: `0x722BcdA7BD1a0f8C1c9b7c0eefabE36c1f0fBF2a`
 - As a user, call the `setColor` function to change the color of the monument. (optional: send at least 0.001 ETH if you have not prefunded the contract).
 - As the owner, withdraw used funds from users
 
+## Run the webserver
+NOTE: When running locally, the color of the monument will not update, because the Chainlink Oracle can't connect to the API endpoint on localhost.
+
+- Install the .Net 5 SDK https://dotnet.microsoft.com/download
+- Navigate to the WebApp directory
+- `dotnet restore`
+- `dotnet run`
+- Navigate to `https://localhost:5001`
 
 # Chainlink Spring Hackathon 2021
 This project was created for the [Chainlink Spring Hackathon 2021](https://chain.link/hackathon) ([DevPost](https://chainlink-2021.devpost.com))

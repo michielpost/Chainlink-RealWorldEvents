@@ -19,11 +19,12 @@ contract Interactive is ChainlinkClient {
     event Deposited(address indexed payee, uint256 weiAmount);
     event Withdrawn(address indexed payee, uint256 weiAmount);
 
+    //Stores the deposited funds per address
     mapping(address => uint256) private _deposits;
 
     constructor() public {
         owner = msg.sender;
-        actionFee = 0.001 ether;
+        actionFee = 0.001 ether; //Set fee
 
         //Network: Kovan
         setPublicChainlinkToken();
@@ -41,14 +42,18 @@ contract Interactive is ChainlinkClient {
         emit Deposited(msg.sender, msg.value);
     }
 
+    /**
+     * Withdraw eth from this contract
+     */
     function withdraw(uint amount) public returns(bool) {
         require(_deposits[msg.sender] >= amount);
         _deposits[msg.sender] -= amount;
+
+        //Transfer to sender
         msg.sender.transfer(amount);
 
         emit Withdrawn(msg.sender, amount);
         return true;
-
     }
 
     /**
@@ -62,8 +67,11 @@ contract Interactive is ChainlinkClient {
      * Calls WebAPI using Chainlink with the given color, if there are enough funds deposited by the calling address
      */
     function setColor(string memory color) public payable returns (bytes32 requestId) {
+        
+        //If the current fee is not the actionFee, check what to do
         if(msg.value != actionFee)
         {
+            //Store fee with user
             if(msg.value > 0)
             {
                 _deposits[msg.sender] += msg.value;
@@ -71,7 +79,7 @@ contract Interactive is ChainlinkClient {
         
             }
 
-            //Check if you have deposited enough funds
+            //Check if you have deposited enough funds to trigger the action
             require(_deposits[msg.sender] >= actionFee);
 
             //Subtract the fee needed for the action
@@ -80,7 +88,7 @@ contract Interactive is ChainlinkClient {
 
         }
         
-        //Add funds to owner
+        //Add funds to owner of this contract
         _deposits[owner] += actionFee;
 
         //Create Chainlink Request
