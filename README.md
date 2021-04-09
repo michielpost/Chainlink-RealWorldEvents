@@ -46,6 +46,9 @@ NOTE: When running locally, the color of the monument will not update, because t
 - `dotnet run`
 - Navigate to `https://localhost:5001`
 
+## Video Demo
+[![Video Demo](screenshots/video_preview.PNG)](https://vimeo.com/535021947)
+
 ## Screenshots
 Initial State, pick a color and press `Set color`
 ![Initial State](screenshots/01_initial.PNG)
