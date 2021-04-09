@@ -46,6 +46,17 @@ NOTE: When running locally, the color of the monument will not update, because t
 - `dotnet run`
 - Navigate to `https://localhost:5001`
 
+## Screenshots
+Initial State, pick a color and press `Set color`
+![Initial State](screenshots/01_initial.PNG)
+
+Send the transaction using MetaMask
+![MetaMask](screenshots/02_metamask.PNG)
+
+Result
+![Green State](screenshots/03_green.PNG)
+
+
 # Chainlink Spring Hackathon 2021
 This project was created for the [Chainlink Spring Hackathon 2021](https://chain.link/hackathon) ([DevPost](https://chainlink-2021.devpost.com))
 
