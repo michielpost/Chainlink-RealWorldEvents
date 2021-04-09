@@ -1,6 +1,8 @@
 ## Interactive Public Monuments
 Make the city interactive and raise money for public infrastructure at the same time!
 
+![Interactive Monuments](logo.jpg "Interactive Monuments")
+
 This smart contract can trigger events in the real world. For example:
 - Set the color of the lights at a city fountain
 - Display a text at an interactive display
