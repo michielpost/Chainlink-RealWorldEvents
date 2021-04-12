@@ -13,7 +13,8 @@ Users have to pay to trigger these events. Users can send the needed funds to th
 
 The City is the owner of the smart contract. They can withdraw the used user funds. These funds can then be used to pay for maintenance of the monuments or other govement spending.
 
-Live Demo: https://chainlink-interactive.azurewebsites.net
+## Live Demo 
+https://chainlink-interactive.azurewebsites.net
 
 ## Video Demo
 [![Video Demo](screenshots/video_preview.PNG)](https://vimeo.com/535021947)
