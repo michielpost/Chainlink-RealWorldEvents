@@ -15,6 +15,9 @@ The City is the owner of the smart contract. They can withdraw the used user fun
 
 Live Demo: https://chainlink-interactive.azurewebsites.net
 
+## Video Demo
+[![Video Demo](screenshots/video_preview.PNG)](https://vimeo.com/535021947)
+
 ## Tech Setup
 - Solidity smart contract
 - Chainlink to do a HTTP web request to an API
@@ -46,9 +49,6 @@ NOTE: When running locally, the color of the monument will not update, because t
 - `dotnet restore`
 - `dotnet run`
 - Navigate to `https://localhost:5001`
-
-## Video Demo
-[![Video Demo](screenshots/video_preview.PNG)](https://vimeo.com/535021947)
 
 ## Screenshots
 Initial State, pick a color and press `Set color`
